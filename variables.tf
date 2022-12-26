@@ -28,5 +28,5 @@ variable "ssh_key" {
 
 variable "domain_name" {
   type = string
-  default = "example.com"
+  default = "sciviz.co"
 }

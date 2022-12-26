@@ -1,4 +1,4 @@
 env_name="dev"
 region="us-west-2"
-domain_name = "example.com"
+domain_name = "sciviz.co"
 instance_type =  "m5d.xlarge"

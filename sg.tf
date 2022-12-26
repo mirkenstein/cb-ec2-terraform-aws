@@ -92,8 +92,8 @@ resource "aws_security_group" "cb_nodes" {
     },
         {
       description      = "Encrypted Mode-to-Node"
-      from_port        = 9999
-      to_port          = 9999
+      from_port        = 0
+      to_port          = 65535
       protocol         = "tcp"
       cidr_blocks      = [aws_vpc.tf_main_cb.cidr_block]
 #      cidr_blocks      = ["0.0.0.0/0"]
@@ -107,7 +107,20 @@ resource "aws_security_group" "cb_nodes" {
       from_port        = 18091
       to_port          = 18097
       protocol         = "tcp"
-      cidr_blocks      = ["0.0.0.0/0"]
+      cidr_blocks      = ["73.246.73.171/32"]
+      ipv6_cidr_blocks = []
+      prefix_list_ids  = []
+      security_groups  = []
+      self             = true
+
+    }
+    ,
+     {
+      description      = "Client Port Import HTTPS "
+      from_port        = 11207
+      to_port          = 11210
+      protocol         = "tcp"
+      cidr_blocks      = ["73.246.73.171/32"]
       ipv6_cidr_blocks = []
       prefix_list_ids  = []
       security_groups  = []
@@ -118,7 +131,7 @@ resource "aws_security_group" "cb_nodes" {
 
   egress = [
     {
-      description      = "TLS from VPC"
+      description      = "Egress Ports"
       from_port        = 0
       to_port          = 0
       protocol         = "-1"
