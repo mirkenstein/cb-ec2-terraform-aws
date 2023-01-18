@@ -107,7 +107,7 @@ resource "aws_security_group" "cb_nodes" {
       from_port        = 18091
       to_port          = 18097
       protocol         = "tcp"
-      cidr_blocks      = ["73.246.73.171/32"]
+      cidr_blocks      = ["0.0.0.0/0"]
       ipv6_cidr_blocks = []
       prefix_list_ids  = []
       security_groups  = []

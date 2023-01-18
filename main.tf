@@ -82,6 +82,7 @@ resource "aws_instance" "cbimport_server" {
   associate_public_ip_address = true
   key_name                    = var.ssh_key
   user_data = "${file("user-data-cb.sh")}"
+  iam_instance_profile = "EC2RoleForSSMandS3"
   tags                        = {
     Name        = "tf-cb-cbimport"
     Terraform   = "true"
