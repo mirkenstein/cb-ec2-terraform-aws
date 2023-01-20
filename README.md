@@ -1,6 +1,6 @@
 # Terraform For Couchbase Cluster Deployment
 
-This is set of TF templates is for deployment of infrastructure for  couchbase cluster.
+This is set of Terraform templates for infrastructure  deployment for  Couchbase cluster on AWS.
 The assumption is that we already have a DNS domain that is managed by AWS Route 53.
 We will deploy total of 7 computes each of which will host an instance of couchbase server with the following roles
 * 2 index nodes

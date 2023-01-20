@@ -27,7 +27,7 @@ module "ec2_instance" {
   source                      = "terraform-aws-modules/ec2-instance/aws"
   version                     = "~> 3.0"
   associate_public_ip_address = true
-  for_each                    = toset(["cb01", "cb02", "cb03","cb-index01","cb-index02"])
+  for_each                    = toset(["cb01", "cb02", "cb03","cb-index01","cb-index02","cb-as01","cb-as02"])
   name                        = "tf-elk-${each.key}"
   ami                         = data.aws_ami.amazon-2.id
   instance_type               = var.instance_type
